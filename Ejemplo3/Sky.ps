@@ -1,0 +1,83 @@
+#version 400
+
+in vec2 texCoord;
+in vec3 normal;
+in vec3 tang;
+in vec3 binorm;
+in vec3 posicion;
+in vec3 luzDireccion;
+in vec3 posicionLuzSol;
+in vec3 cameraPositionRelative;
+
+out vec4 outputColor;
+
+uniform sampler2D cieloM;
+uniform sampler2D cieloA;
+uniform sampler2D cieloN;
+uniform sampler2D cieloT;
+uniform int timerCielo;
+uniform int trans;
+uniform float orbit;
+//uniform vec3 luzDireccion;
+uniform vec4 difusaDia;
+uniform vec3 moonDirection;  // Added moon direction
+uniform vec4 difusaNoche;  // Added diffuse color for the moon
+uniform vec4 luzAmbiental;
+uniform vec4 frDebil;
+uniform vec4 frFuerte;
+
+void main(void)
+{
+    vec4 TextureColorAmanecer = texture(cieloA, texCoord);
+    vec4 TextureColorDia = texture(cieloM, texCoord);
+    vec4 TextureColorTarde = texture(cieloT, texCoord);
+    vec4 TextureColorNoche = texture(cieloN, texCoord);
+
+    // Calculate the weights for the texture blending based on the orbit value
+
+    // Blend the textures based on the weights and the trans value
+    vec4 blendedColor;
+
+    if (trans == 0) {
+        blendedColor = mix(TextureColorAmanecer, TextureColorDia, orbit);
+        vec3 diffuseColor = difusaDia.rgb * max(dot(normalize(normal), normalize(luzDireccion)), 0.0);
+        blendedColor.rgb += diffuseColor;
+    }
+    else if (trans == 1) {
+        blendedColor = mix(TextureColorDia, TextureColorTarde, orbit);
+        vec3 diffuseColor = difusaDia.rgb * max(dot(normalize(normal), normalize(luzDireccion)), 0.0);
+        blendedColor.rgb += diffuseColor;
+    }
+    else if (trans == 2) {
+        blendedColor = mix(TextureColorTarde, TextureColorNoche, orbit);
+        vec3 diffuseColor = difusaDia.rgb * max(dot(normalize(normal), normalize(luzDireccion)), 0.0);
+        blendedColor.rgb += diffuseColor;
+    }
+    else if (trans == 3) {
+        blendedColor = mix(TextureColorNoche, TextureColorAmanecer, orbit);
+        vec3 diffuseColor = difusaNoche.rgb * max(dot(normalize(normal), normalize(luzDireccion)), 0.0);
+        blendedColor.rgb += diffuseColor;
+    }
+
+    // Add the sun to the blended color
+    vec3 sunColor = vec3(1.0, 1.0, 0.0); // Yellow sun color
+    float sunIntensity = 0.2; // Adjust the intensity of the sun
+    vec3 sunDirection = normalize(posicionLuzSol - posicion); // Sun direction vector
+    float sunDot = dot(normalize(normal), sunDirection);
+    vec3 sunContribution = sunIntensity * sunColor * max(sunDot, 0.0);
+    blendedColor.rgb += sunContribution;
+
+    // Add the moon to the blended color
+    vec3 moonDirection = normalize(posicionLuzSol - posicion);
+    vec3 moonColor = vec3(0.8, 0.8, 0.8); // Moon color (gray)
+    float moonIntensity = 0.01; // Adjust the intensity of the moon
+    float moonDot = dot(normalize(normal), -moonDirection);
+    vec3 moonContribution = moonIntensity * moonColor * max(moonDot, 0.0);
+    blendedColor.rgb += moonContribution;
+
+    outputColor = blendedColor;
+}
+
+
+
+

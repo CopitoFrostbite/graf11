@@ -1,0 +1,123 @@
+#version 400
+
+//////////////////////
+// INPUT VARIABLES  //
+//////////////////////
+in vec2 texCoord;
+in vec3 normal;
+in vec3 tang;
+out vec3 binorm;
+in vec3 posicion;
+in vec3 luzDireccion;
+in vec3 cameraPositionRelative;
+in vec4 calculoAmbiente;
+in vec4 calculoDifusa;
+in vec4 calculoEspecular;
+
+///////////////////////
+// UNIFORM VARIABLES //
+///////////////////////
+uniform vec4 difusaDia;
+uniform vec4 luzAmbiental;
+
+uniform vec3 lightcolor;
+
+uniform vec4 frDebil;
+uniform vec4 frFuerte;
+uniform float atenuarLuz;
+uniform float distortionFactor;
+uniform float desplaza;
+uniform sampler2D shaderAgua;
+uniform sampler2D shaderAgua2;
+uniform sampler2D shaderAguaDistortion;
+uniform sampler2D shaderAguaAzul;
+
+//////////////////////
+// OUTPUT VARIABLES //
+//////////////////////
+out vec4 fragColor;
+
+
+float random(vec2 st)
+{
+    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453);
+}
+////////////////////////////////////////////////////////////////////////////////
+// Fragment Shader
+////////////////////////////////////////////////////////////////////////////////
+void main(void)
+{
+    // Normalize vectors
+    vec3 normalDir = normalize(normal);
+    vec3 lightDir = -luzDireccion;
+    vec3 viewDir = normalize(-posicion);
+
+    // Calculate animated texture coordinates with distortion
+    vec2 animatedTexCoord = texCoord + vec2(random(texCoord + desplaza), random(texCoord - desplaza)) * distortionFactor;
+    vec4 waterColor = texture(shaderAguaAzul, animatedTexCoord);
+
+    // Apply lighting calculations
+    float lambertian = max(dot(normalDir, lightDir), 0.0);
+    vec3 reflDir = reflect(-lightDir, normalDir);
+
+    // Calculate specular color
+    float specularStrength = texture(shaderAguaDistortion, texCoord).r;
+
+    // Calculate diffuse color
+    vec4 lightDiffuse = calculoDifusa * lambertian;
+
+    // Apply water texture
+    waterColor = texture(shaderAguaAzul, texCoord);
+
+    // Apply lighting effects using normal map
+    vec3 normalMap = texture(shaderAgua2, texCoord).rgb * 2.0 - 1.0;
+    vec3 normalDirAdjusted = normalize(tang * normalMap.x + binorm * normalMap.y + normalDir * normalMap.z);
+    float lambertianAdjusted = max(dot(normalDirAdjusted, lightDir), 0.0);
+    vec4 adjustedDiffuse = lightDiffuse * lambertianAdjusted;
+
+    // Combine colors with adjusted diffuse and specular lighting
+    vec4 finalColorAdjusted = mix(adjustedDiffuse, adjustedDiffuse + 3.0 * specularStrength, frDebil.a);
+
+    finalColorAdjusted = mix(finalColorAdjusted, frFuerte, frFuerte.a);
+    finalColorAdjusted = mix(finalColorAdjusted, vec4(1.0), atenuarLuz);
+    
+
+    // Add the caustics to the water color
+    vec4 waterColorWithAlpha = vec4(finalColorAdjusted.rgb + vec3(0.0, 0.0, 0.5), 0.5);
+
+    // Apply additional lighting effects
+    vec4 ambientColor = calculoAmbiente; // Ambient color
+    vec4 diffuseColor =  finalColorAdjusted * waterColor; // Diffuse color
+    vec4 finalColor = ambientColor + diffuseColor;
+
+    // Calculate transparency based on view angle
+    float transparency = clamp(dot(normalize(viewDir), normalDir), 0.0, 1.0);
+
+    // Calculate refraction using the refraction index texture
+    float refractionIndex = texture(shaderAguaDistortion, texCoord).r;
+    vec3 refractedDir = refract(viewDir, normalDir, refractionIndex);
+
+    // Calculate distance-based attenuation factor
+    float distance = length(viewDir - posicion);
+    float attenuation = smoothstep(100.0, 500.0, distance);
+
+    // Mix water textures with transparency, refraction, and distance-based attenuation
+    float mixFactor = transparency * attenuation * 0.1;
+    vec4 finalWaterColor = mix(waterColor, texture(shaderAguaDistortion, refractedDir.xy), mixFactor);
+    // Calculate specular reflection
+    vec3 reflectionDir = reflect(viewDir, normalDir);
+    float specularIntensity = pow(max(dot(reflectionDir, -lightDir), 0.0), 3.0); // Adjust the exponent for desired shininess
+
+    // Combine colors with specular reflection
+    vec4 finalColorWithSpecular = finalColor + specularIntensity * specularStrength;
+    // Adjust the mix between specular reflection and water color
+    float specularMixFactor = 0.5; 
+    vec4 finalColorWithTransparency = mix(finalColorWithSpecular, finalWaterColor, transparency * specularMixFactor);
+    
+    
+    fragColor = finalColorWithTransparency * waterColorWithAlpha;
+}
+
+
+
+

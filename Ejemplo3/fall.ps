@@ -1,0 +1,110 @@
+#version 400
+
+/////////////////////
+// INPUT VARIABLES //
+/////////////////////
+in vec2 texCoord;
+in vec2 texCoord2;
+in vec3 normal;
+in vec3 tang;
+in vec3 binorm;
+in vec3 posicion;
+in vec3 luzDireccion;
+in vec4 calculoEspecular;
+in vec4 calculoAmbiente;
+in vec4 calculoDifusa;
+in vec3 calculoVista;
+
+//////////////////////
+// OUTPUT VARIABLES //
+//////////////////////
+out vec4 outputColor;
+
+///////////////////////
+// UNIFORM VARIABLES //
+///////////////////////
+uniform sampler2D billtext;
+uniform sampler2D billnormText;
+uniform sampler2D billspecText;
+uniform sampler2D billtext2;
+uniform sampler2D billnormText2;
+uniform sampler2D billspecText2;
+uniform float shineness;
+uniform float framecount;
+uniform float framecount2;
+
+////////////////////////////////////////////////////////////////////////////////
+// Pixel Shader
+//////////////////////////////////////////////////////////////////////////////// 
+void main(void)
+{
+    // Obtener la textura difusa o de color de billtext con movimiento sinusoidal suavizado en X
+    float offsetX = sin(texCoord.x * 2.0 + framecount * 1.0) * 0.05;
+    vec2 texCoordOffsetX = vec2(texCoord.x + offsetX, texCoord.y);
+    vec4 ColorTex = texture(billtext, texCoordOffsetX);
+
+    // Obtener la textura difusa o de color de billtext2 con desplazamiento en eje Y y movimiento sinusoidal suavizado en X
+   
+    float offsetX2 =  sin(texCoord2.x * 2.0 + framecount * 1.0) * 0.05 + 0.02;
+    vec2 texCoordOffsetY = vec2(texCoord2.x + offsetX2,  (texCoord2.y - framecount2) );
+    vec4 ColorTex2 = texture(billtext2, texCoordOffsetY);
+    
+    // Obtener las texturas normales y especulares correspondientes
+    vec3 NormalTex = texture(billnormText, texCoord).rgb;
+    vec3 NormalTex2 = texture(billnormText2, texCoord2).rgb;
+    vec4 EspecularTex = texture(billspecText, texCoord);
+    vec4 EspecularTex2 = texture(billspecText2, texCoord2);
+
+    // Normalizar las texturas normales
+    NormalTex = normalize(NormalTex);
+    NormalTex2 = normalize(NormalTex2);
+
+    // Cálculo de la aportación de luz para billtext
+    vec4 aportacionAmbiental = calculoAmbiente;
+    vec4 aportacionDifusa = calculoDifusa * clamp(dot(-luzDireccion, NormalTex), 0.0, 1.0);
+    vec3 dirReflejo = normalize(reflect(-luzDireccion, NormalTex));
+    float calculoAporteEspec = pow(max(dot(-calculoVista, dirReflejo), 0.0), shineness);
+    vec4 aportacionEspecular = EspecularTex * calculoEspecular * calculoAporteEspec;
+
+    // Cálculo de la aportación de luz para billtext2 con desplazamiento en eje Y y movimiento sinusoidal suavizado en X
+    vec4 aportacionAmbiental2 = calculoAmbiente;
+    vec4 aportacionDifusa2 = calculoDifusa * clamp(dot(-luzDireccion, NormalTex2), 0.0, 1.0);
+    vec3 dirReflejo2 = normalize(reflect(-luzDireccion, NormalTex2));
+    float calculoAporteEspec2 = pow(max(dot(-calculoVista, dirReflejo2), 0.0), shineness);
+    vec4 aportacionEspecular2 = EspecularTex2 * calculoEspecular * calculoAporteEspec2;
+
+    // Descartar píxeles con baja opacidad
+    if (ColorTex.a >= 0.1) {
+        // Mezclar los colores de billtext y billtext2 con un factor de mezcla alpha
+        float alpha = 0.3; // Ajusta este valor según el nivel de mezcla deseado
+        vec3 mixedColor = mix(ColorTex.rgb, ColorTex2.rgb, alpha);
+
+        // Calcular la iluminación para el color mezclado
+        vec4 totalLighting = ( aportacionAmbiental + aportacionDifusa + aportacionEspecular) + (aportacionAmbiental2 + aportacionDifusa2 + aportacionEspecular2);
+        // Aplicar la iluminación al color mezclado
+        vec3 finalColor = mixedColor * totalLighting.rgb;
+
+        // Combinar el color final con el componente alfa de ColorTex
+    float finalAlpha = max(ColorTex.a, ColorTex2.a);
+    vec3 finalColorWithGreen = vec3(finalColor.r, finalColor.g + 0.1, finalColor.b);
+    outputColor = vec4(finalColorWithGreen, finalAlpha);
+    } else {
+    // Definir el centro y el radio de la región circular
+    vec2 center = vec2(0.48, 0.4);  // Coordenadas del centro de la imagen (puedes ajustarlas si es necesario)
+    float radius = 0.33;  // Radio de la región circular (puedes ajustarlo si es necesario)
+
+    // Calcular la distancia del fragmento actual al centro de la imagen
+    float distanceToCenter = distance(texCoord, center);
+
+    // Comprobar si el fragmento está dentro de la región circular
+    if (distanceToCenter <= radius) {
+        // Rellenar con un color azul claro semitransparente
+        vec3 fillColor = vec3(0.4, 0.8, 1.0);  // Azul claro
+        float fillAlpha = 0.5;  // Baja opacidad
+        outputColor = vec4(fillColor, fillAlpha);
+    } else {
+        // Mantener el fragmento transparente
+        discard;
+    }
+    }
+}

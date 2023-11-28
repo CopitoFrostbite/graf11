@@ -1,0 +1,95 @@
+////////////////////////////////////////////////////////////////////////////////
+// Filename: light.ps
+////////////////////////////////////////////////////////////////////////////////
+#version 400
+
+
+/////////////////////
+// INPUT VARIABLES //
+/////////////////////
+in vec2 texCoord;
+in vec3 normal;
+in vec3 tang;
+in vec3 binorm;
+in vec4 calculoAmbiente;
+in vec4 calculoDifusa;
+in vec3 luzDireccion;
+
+//////////////////////
+// OUTPUT VARIABLES //
+//////////////////////
+out vec4 outputColor;
+
+
+///////////////////////
+// UNIFORM VARIABLES //
+///////////////////////
+uniform sampler2D shaderForest;
+uniform sampler2D shaderForestNorm;
+uniform sampler2D shaderDirt;
+uniform sampler2D shaderDirtNorm;
+uniform sampler2D shaderCliff;
+uniform sampler2D shaderCliffNorm;
+uniform sampler2D shaderPiedra;
+uniform sampler2D shaderPiedraNorm;
+uniform sampler2D shaderBlend;
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Pixel Shader
+////////////////////////////////////////////////////////////////////////////////
+void main(void)
+{
+
+	vec4 textureColor, textColorTierra, textColorPiedra, textColorZacateM, mapnormblend;
+	vec3 ZNormal, TNormal, PNormal, ZMNormal, blendnorm;
+	vec3 NewNormal;
+	vec3 normalaza;
+	vec3 lightDir;
+	float lightIntensity;
+
+
+	// Obtener la textura difusa o de color
+	textureColor = texture(shaderForest, texCoord);
+	textColorTierra = texture(shaderDirt, texCoord);
+	textColorPiedra = texture(shaderCliff, texCoord);
+	textColorZacateM = texture(shaderPiedra, texCoord);
+	vec4 blendcom = texture(shaderBlend, texCoord/100.0);
+	textureColor = mix(textureColor, textColorTierra, blendcom.r);
+	textureColor = mix(textureColor, textColorZacateM, blendcom.g);
+	textureColor = mix(textureColor, textColorPiedra, blendcom.b);
+
+	//obtener el mapa de normales
+	ZNormal = texture(shaderForestNorm, texCoord).rgb;
+	TNormal = texture(shaderDirtNorm, texCoord).rgb;
+	PNormal = texture(shaderCliffNorm, texCoord).rgb;
+	ZMNormal = texture(shaderPiedraNorm, texCoord).rgb;
+	mapnormblend = texture(shaderBlend, texCoord/100.0);
+
+	//el mapa de normales va de 0 a 1 o sea de 0 a 90 grados, debe pasar de -1 a 1 y -90 a 90 grados
+	ZNormal = 2 * ZNormal - vec3(1.0,1.0,1.0);
+	TNormal = 2 * TNormal - vec3(1.0,1.0,1.0);
+	PNormal = 2 * PNormal - vec3(1.0,1.0,1.0);
+	ZMNormal = 2 * ZMNormal  - vec3(1.0,1.0,1.0);
+	blendnorm = mix(ZNormal, TNormal, mapnormblend.r);
+	blendnorm = mix(blendnorm, ZMNormal, mapnormblend.g);
+	blendnorm = mix(blendnorm, PNormal, mapnormblend.b);
+
+	//incluir la tang la binormal y la normal
+	mat3 TBN = mat3(tang, binorm, normal);
+	//afectar el mapa de normales a la nueva posicion mundial
+	normalaza = TBN * blendnorm; 
+	//normalizamos la normal y la multiplicamos por el vector de luz para generar sombras
+    NewNormal = normalize(normalaza);
+
+	// Invertimos la direccion de la luz para calculos.
+	lightDir = luzDireccion;
+
+	vec4 aportacionAmbiental = calculoAmbiente;
+	vec4 aportacionDifusa = calculoDifusa*clamp(dot(lightDir, NewNormal), 0.0, 1.0);
+
+	// Multiplica la textura color final.
+	outputColor = textureColor*(aportacionAmbiental + aportacionDifusa);
+	//outputColor = textureColor;
+}

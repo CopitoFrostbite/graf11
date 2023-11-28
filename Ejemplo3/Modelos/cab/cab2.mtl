@@ -1,0 +1,888 @@
+# 3ds Max Wavefront OBJ Exporter v0.99 - (c)2007 guruware
+# File Created: 01.04.2023 05:58:02
+
+newmtl cab2_cab_Material__81
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__66
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc.jpg
+
+newmtl cab2_cab_Material__61
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc2.jpg
+
+newmtl cab2_cab_Material__99
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__45
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__43
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__100
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__73
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__65
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc.jpg
+
+newmtl cab2_cab_Material__27
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__68
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__60
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__67
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc2.jpg
+
+newmtl cab2_cab_Material__57
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__91
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc2.jpg
+
+newmtl cab2_cab_Material__58
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__94
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc2.jpg
+
+newmtl cab2_cab_Material__37
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__38
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__101
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__55
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__52
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__92
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__56
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__39
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__59
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__93
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__63
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc3.jpg
+
+newmtl cab2_cab_Material__72
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__29
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\roof_bc2.png
+
+newmtl cab2_cab_Material__74
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__86
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc3.jpg
+
+newmtl cab2_cab_Material__28
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\roof_bc2.png
+
+newmtl cab2_cab_Material__90
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc2.jpg
+
+newmtl cab2_cab_Material__48
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__89
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc.jpg
+
+newmtl cab2_cab_Material__35
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__34
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__36
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__40
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__53
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__54
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__88
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc.jpg
+
+newmtl cab2_cab_Material__47
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__69
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__84
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__30
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\roof_bc2.png
+
+newmtl cab2_cab_Material__26
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__82
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__85
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc3.jpg
+
+newmtl cab2_cab_Material__98
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__96
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc3.jpg
+
+newmtl cab2_cab_Material__46
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__49
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__97
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__31
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc3.jpg
+
+newmtl cab2_cab_Material__83
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__80
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__87
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\rober\OneDrive\Escritorio\Graf 1\graf1\Ejemplo3\Modelos\cab\concrete_bc3.jpg
+
+newmtl cab2_cab_Material__41
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl cab2_cab_Material__33
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+
+newmtl door2_aiStandardSurface28SG
+	Kd 0.5000 0.5000 0.5000
+	Ks 1.0000 1.0000 1.0000
+	Tr 0.0000
+	d 1.0000
+	Tf 1.0000 1.0000 1.0000
+	Pr 0.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5200
+	Ke 0.0000 0.0000 0.0000
+	illum 2

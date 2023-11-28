@@ -1,0 +1,65 @@
+////////////////////////////////////////////////////////////////////////////////
+// Filename: light.ps
+////////////////////////////////////////////////////////////////////////////////
+#version 400
+
+
+/////////////////////
+// INPUT VARIABLES //
+/////////////////////
+in vec2 texCoord;
+in vec3 normal;
+in vec3 tang;
+in vec3 binorm;
+in vec3 posicion;
+in vec3 luzDireccion;
+in vec4 calculoEspecular;
+in vec4 calculoAmbiente;
+in vec4 calculoDifusa;
+in vec3 calculoVista;
+
+//////////////////////
+// OUTPUT VARIABLES //
+//////////////////////
+out vec4 outputColor;
+
+
+///////////////////////
+// UNIFORM VARIABLES //
+///////////////////////
+uniform sampler2D billtext;
+uniform sampler2D billnormText;
+uniform sampler2D billspecText;
+uniform float shineness;
+
+////////////////////////////////////////////////////////////////////////////////
+// Pixel Shader
+////////////////////////////////////////////////////////////////////////////////
+void main(void)
+{
+	vec4 ColorTex;
+	vec3 NormalTex;
+	vec4 EspecularTex;
+	// Obtener la textura difusa o de color
+	ColorTex = texture(billtext, texCoord);	
+
+	mat3 TBN = mat3(tang, binorm, normal);
+
+	NormalTex = texture(billnormText, texCoord).rgb;
+	NormalTex = 2*NormalTex-vec3(1.0, 1.0, 1.0);
+	NormalTex = normalize(TBN*NormalTex);
+
+	EspecularTex = texture(billspecText, texCoord);
+
+	//vec3 luzDireccion = -dirLuz;
+	vec4 aportacionAmbiental = calculoAmbiente;
+	vec4 aportacionDifusa = calculoDifusa*clamp(dot(-luzDireccion, NormalTex), 0.0, 1.0);
+	vec3 dirReflejo = normalize(reflect(-luzDireccion, NormalTex));
+	float calculoAporteEspec = pow(max(dot(-calculoVista, dirReflejo), 0.0), shineness);
+	vec4 aportacionEspecular = EspecularTex* calculoEspecular* calculoAporteEspec;
+
+	if (ColorTex.a < 0.1)
+		discard;
+	else
+		outputColor = ColorTex*(aportacionAmbiental + aportacionDifusa + aportacionEspecular);
+}
